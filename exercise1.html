@@ -20,13 +20,13 @@
         }
 
         h1 {
-            float: left;
+            text-align: center;
             margin: 0;
         }
 
         nav {
-            float: right;
-            
+            float: center;
+
             margin-top: 10px;
         }
 
@@ -48,26 +48,47 @@
         @media only screen and (max-width: 768px) {
 
         /* TODO 4: Center logo */
-
+        h1 {
+            text-align: center;
+            margin: 0;
+        }
         /* TODO 5: Shift navigation below logo, add a black background and center all nav items */
+        nav {
+            display: none;
+        }
+        .hamburger-menu {
+            display: block;
+        }
+   
         nav a {
             text-decoration: none;
             color: black;
             padding: 0 10px;
             text-align: center;
+            
         }
         /* TODO 6: Stack the 3 images in 1 column */
-        
-        /* TODO 7: Hide the video */
-        
+        section.column{
+            display: flex;
+            flex-wrap: nowrap;
+         background-color: rgba(0, 0, 0, 0);
         }
+        section.column > img{
+            width: 33%;
+            align-items: center;
+        }
+        /* TODO 7: Hide the video */
+        section.hide{
+            display: none;
+        }
+    }       
     </style>
 </head>
 
 <body>
     <header>
         <h1>Responsive Web Page</h1>
-        <nav class="justify-content-center" style="background-color: rgba(0, 0, 0, 1); padding: 2vw; ">
+        <nav class="justify-content-center hamburger-menu" style="background-color: rgba(0, 0, 0, 1); padding: 1vw; text-align: center; ">
             <a style="font-size:2vw; color:white;" href="#">Home</a>
             <a style="font-size:2vw; color:white;"  href="#">About</a>
             <a style="font-size:2vw; color:white;"  href="#">Contact</a>
@@ -83,11 +104,11 @@
                 deserunt mollit anim id est laborum.</p>
         </section>
 
-        <section>
-            <img src="images/1.jpg" width="300" style="width:33.33%;"><img src="images/2.jpg" width="300" style="width:33.33%;"><img src="images/3.jpg" width="300" style="width:33.33%;">
+        <section class="column">
+            <img src="images/1.jpg" width="300"><img src="images/2.jpg" width="300"><img src="images/3.jpg" width="300">
         </section>
 
-        <section class="">
+        <section class="hide">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/HCDVN7DCzYE"
                 title="YouTube video player" frameborder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
